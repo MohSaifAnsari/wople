@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            justify-content: center;
+        }
+
+        header {
+            background-color: green;
+            color: black;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid red;
+        }
+
+        .logo img {
+            height: 130px;
+            width: 130px;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 20px;
+            width: 100%;
+            padding: 0 10px;
+        }
+
+        #cart-list {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid black;
+            margin-top: 10px;
+            background-color: grey;
+            padding: 10px;
+            border-radius: 4px;
+            flex-wrap: wrap;
+        }
+
+        .cart-item img {
+            width: 80px;
+            border: 1px solid black;
+        }
+
+        .remove-button {
+            padding: 5px;
+            color: white;
+            background-color: blue;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .remove-button:hover {
+            color: red;
+            transition: all ease-in 0.5s;
+            scale: 1.1;
+        }
+
+        .total-price-container {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 12px 20px;
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background-color: green;
+            transform: scale(1.05);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        .back {
+            color: white;
+        }
+
+        .back:hover {
+            color: red;
+
+            text-decoration: underline;
+            transition: color 0.3s ease;
+
+        }
+
+        .back a:hover {
+            color: red;
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="gallery/wople logo.png" alt="" class="icon">
+        </div>
+        <h1>Your Cart</h1>
+        <h3 class="back">
+            <a href="wople.html">Go to
+                Homepage
+            </a>
+        </h3>
+    </header>
+    <main>
+        <ul id="cart-list"></ul>
+    </main>
+
+    <div class="total-price-container">
+        Total Price: <span id="total-price">₹ 0.00</span>
+    </div>
+
+    <div class="button-container">
+        <a href="buy.html" class="button">Buy Now</a>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+
+</html>

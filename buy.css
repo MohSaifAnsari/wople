@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #e0eafc, #cfdef3); /* Soft gradient background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    padding: 20px; /* Added padding for smaller screens */
+}
+
+.container {
+    max-width: 210mm; /* A4 width */
+    max-height: 297mm; /* A4 height */
+    width: 100%; /* Responsive width */
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #FF6F61; /* Stylish left border color */
+    overflow: hidden; /* Prevent overflow */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #FF6F61; /* Stylish heading color */
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555; /* Darker label color for readability */
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #FF6F61; /* Input border color */
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #E95E47; /* Darker focus border */
+    box-shadow: 0 0 5px rgba(255, 111, 97, 0.5); /* Soft focus shadow */
+    outline: none;
+}
+
+button {
+    padding: 12px;
+    background-color: red; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px; /* Ensure spacing above the button */
+}
+
+button:hover {
+    background-color: green; /* Darker button hover color */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+button:active {
+    transform: scale(0.95); /* Pressed effect */
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+        border-left: none; /* Remove left border on small screens */
+        box-shadow: none; /* Remove shadow on small screens */
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}

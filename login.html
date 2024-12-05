@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>log in page </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<style>
+    body {
+        background-image: url('furnitureee.jpg');
+        background-size: 1560px 800px;
+        background-repeat: no-repeat;
+
+
+    }
+
+    .button-container {
+        text-align: center;
+        margin: 12px;
+    }
+    .buttonss{
+        display: flex;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 12px 20px;
+        background-color: green;
+        color: white;
+        text-align: center;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        transition: background-color 0.3s, transform 0.3s;
+        text-decoration: none;
+    }
+
+    .button:hover {
+        background-color: red;
+        transform: scale(1.05);
+    }
+
+    .button:active {
+        transform: scale(0.95);
+    }
+</style>
+
+<body>
+    <div class="container" id="container" style="border: 3px solid black;">
+        <div class="form-container sign-up">
+            <form method="POST" action="register.php">
+                <h1>Create Account</h1>
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="pass" placeholder="Password" required>
+                <button type="submit" name="register">Sign Up</button>
+            </form>
+
+        </div>
+        <div class="form-container sign-in">
+            <form method="POST" action="login.php">
+                <h1>Sign In</h1>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="pass" placeholder="Password" required>
+                <button type="submit" name="login">Sign In</button>
+            </form>
+
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h2 style="color: red;">Welcome Back!</h2>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1 style="color: red; ">WELCOME </h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buttonss">
+        <div class="button-container">
+            <a href="wople.html" class="button">Shop Now</a>
+        </div>
+
+        <div class="button-container">
+            <a href="wople.html" class="button">skip</a>
+        </div>
+        <div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

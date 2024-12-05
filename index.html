@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>landing_page</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<style>
+    .button-container {
+            text-align: center;
+            margin: 12px;
+        }
+
+        .button {
+            display: inline-block; 
+            padding: 12px 20px;
+            background-color: rgb(109, 5, 5); 
+            color: white;
+            text-align: center; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            text-decoration: none; 
+        }
+
+        .button:hover {
+            background-color: green; 
+            transform: scale(1.05); 
+        }
+
+        .button:active {
+            transform: scale(0.95); 
+        }
+        #saif {
+            font-size: 45px; 
+            color: rgb(78, 235, 11);
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+
+</style>
+
+<body>
+    <div class="banner">
+        <video autoplay loop muted src="gallery/bg video.mp4"></video>
+
+        <div class="navbar">
+            <img class="logo" src="gallery/wople logo.png">
+        </div>
+        <div class="content">
+           
+            <h1 id="welcome-text" style="color: red;"></h1>
+            <h2 style="color: white; font-style: italic;">
+                We are complete to need of your Furniture Requirements
+            </h2>
+            <div class="button-container">
+                <a href="login.html" class="button">Buy Now</a>
+                
+            </div>
+            <h1 id="saif"></h1>
+        </div>
+    </div>
+
+    
+   <script>
+        const text = "WELCOME"; 
+        const saifText = "DEVELOPED BY = SAIF ANSARI"; 
+
+        let i = 0, j = 0;
+        const speed = 100; 
+
+        function typeWriterWelcome() {
+            if (i < text.length) {
+                document.getElementById("welcome-text").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriterWelcome, speed);
+            } else {
+                typeWriterSaif(); 
+            }
+        }
+
+        function typeWriterSaif() {
+            if (j < saifText.length) {
+                document.getElementById("saif").innerHTML += saifText.charAt(j);
+                j++;
+                setTimeout(typeWriterSaif, speed);
+            }
+        }
+
+         window.onload = () => {
+            typeWriterWelcome();
+
+            
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 3000 + text.length * speed);
+        };
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Purchase Form</title>
+    <link rel="stylesheet" href="buy.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Product Purchase Form</h1>
+        <form id="purchaseForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="nearbyArea">Nearby Area:</label>
+            <input type="text" id="nearbyArea" name="nearbyArea" required>
+
+            <label for="area">Area/village/town:</label>
+            <input type="text" id="area" name="area" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+
+            <label for="pincode">Pincode:</label>
+            <input type="text" id="pincode" name="pincode" pattern="[0-9]{6}" required>
+
+            <label for="mobileNumber">Mobile Number:</label>
+            <input type="tel" id="mobileNumber" name="mobileNumber" pattern="[0-9]{10}" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Any Specific Message (Optional):</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write any specific message here..."></textarea>
+
+            <button type="submit" id="placeOrderButton">Placed Order</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('purchaseForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting traditionally
+
+            const order = {
+                fullName: document.getElementById('fullName').value,
+                nearbyArea: document.getElementById('nearbyArea').value,
+                area: document.getElementById('area').value,
+                city: document.getElementById('city').value,
+                state: document.getElementById('state').value,
+                pincode: document.getElementById('pincode').value,
+                mobileNumber: document.getElementById('mobileNumber').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value || 'N/A',
+                product: 'Sample Product', // Adjust this based on actual product
+                quantity: 1, // Assuming quantity as 1
+                total: 2000, // Set the total dynamically if needed
+                image: 'path/to/image.jpg' // Include actual product image if available
+            };
+
+            // Retrieve existing orders from localStorage
+            let orders = JSON.parse(localStorage.getItem('orders')) || [];
+            orders.push(order); // Add new order
+            localStorage.setItem('orders', JSON.stringify(orders)); // Save back to localStorage
+
+            alert("Order placed successfully!");
+            clearFunction();
+        });
+        function clearFunction() {
+            const fullName = document.getElementById('fullName').value = ""
+            const nearbyArea = document.getElementById('nearbyArea').value = ""
+            const area = document.getElementById('area').value = ""
+            const city = document.getElementById('city').value = ""
+            const state = document.getElementById('state').value = ""
+            const pincode = document.getElementById('pincode').value = ""
+            const mobileNumber = document.getElementById('mobileNumber').value = ""
+            const email = document.getElementById('email').value = ""
+            const message = document.getElementById('message').value = ""
+            localStorage.removeItem('')
+
+        }
+        
+
+    </script>
+</body>
+
+</html>
